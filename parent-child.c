@@ -1,7 +1,7 @@
 // fork is used to create child process. (clone of parent) (not using thread, creating another process)
 // fork returns -> 0 (child process) or +1 (positive -> parent process) or -1 (if child process not created);
 
-#include<stdio.h>
+#include <stdio.h>
 #include <stdlib.h>
 #include <unistd.h>
   
