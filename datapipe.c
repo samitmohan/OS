@@ -21,12 +21,12 @@ int main()
         return 1;
     }
 
-    printf("Enter the string");
+    printf("Enter the string \n");
     scanf("%s", input_str);
     p = fork(); // create process
     if (p < 0)  // if no process created
     {
-        fprintf(stderr, "Fork Failed");
+        fprintf(stderr, "Fork Failed \n");
         return 1;
     }
 
@@ -44,10 +44,10 @@ int main()
     else
     {
         close(file[1]); // close write file descripter
-        printf("\n Child reading parent data from pipe");
+        printf("Child reading parent data from pipe \n");
         char parent_str[100]; // create parent string to cpy elements from read (file[0]) to parent_str
-        read(file[0], parent_str[100], 100); // file, parent_str, size of parent_str
-        printf("Read string %s", parent_str);
+        read(file[0], parent_str, 100); // file, parent_str, size of parent_str
+        printf("Read string : %s \n", parent_str);
         close(file[0]); // close read file descripter
         exit(0);
     }
